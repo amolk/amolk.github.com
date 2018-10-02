@@ -1876,8 +1876,8 @@ _________________________________________________________________
 <li><code>OnlineToBatch</code> crated batches of the data and successfully drove the model's training</li>
 <li>We are not concerned about the accuracy of the model, but only need an indication that the network was trained. Test data produces reasonable predictions, indicating that the network was trained and <code>OnlineToBatch</code> does not have glaring bugs.</li>
 </ul>
-<p>Next, I will use <code>OnlineToBatch</code> to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time</p>
-<p>When training using this simulated online mode, $n_{batch}$ could start of small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.</p>
+<p>Next, I will use <code>OnlineToBatch</code> to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time.</p>
+<p>When training using this simulated online mode, $n_{batch}$ could start off small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.</p>
 
 </div>
 </div>
