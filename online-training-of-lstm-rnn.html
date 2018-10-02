@@ -51,7 +51,7 @@
 <meta property="article:tag" content="lstm"/>
 <meta property="article:tag" content="rnn"/>
 <meta property="article:tag" content="online learning"/>
-<meta property="og:image" content="images/profile.png">
+<meta property="og:image" content="/images/profile.png">
 
   <title>Amol's blog &ndash; Online training of LSTM RNN</title>
 
@@ -60,7 +60,7 @@
   <aside>
     <div>
       <a href="">
-        <img src="images/profile.png" alt="Amol Kelkar" title="Amol Kelkar">
+        <img src="/images/profile.png" alt="Amol Kelkar" title="Amol Kelkar">
       </a>
       <h1><a href="">Amol Kelkar</a></h1>
 
@@ -1533,7 +1533,8 @@ y =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Create-LSTM-based-model">Create LSTM based model<a class="anchor-link" href="#Create-LSTM-based-model">&#182;</a></h2>
+<h2 id="Create-LSTM-based-model">Create LSTM based model<a class="anchor-link" href="#Create-LSTM-based-model">&#182;</a></h2><p>To test if <code>OnlineToBatch</code> can successfully drive the training of a model, we will create a LSTM based model.</p>
+
 </div>
 </div>
 </div>
@@ -1864,7 +1865,8 @@ _________________________________________________________________
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
 <li>We generated some data, processed it sequentially one point as a time</li>
-<li>OnlineToBatch crated batches of the data and successfully drove the model's training</li>
+<li><code>OnlineToBatch</code> crated batches of the data and successfully drove the model's training</li>
+<li>Next, I will use <code>OnlineToBatch</code> to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time</li>
 </ul>
 
 </div>
@@ -1933,7 +1935,7 @@ _________________________________________________________________
   "@type" : "Blog",
   "name": " Amol's blog ",
   "url" : "",
-  "image": "images/profile.png",
+  "image": "/images/profile.png",
   "description": "Amol's Journey towards AGI and Machine Consciousness"
 }
 </script>
