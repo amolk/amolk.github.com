@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Amol's blog</title><link>/</link><description>Artificial General Intelligence and Machine Consciousness Researcher</description><lastBuildDate>Mon, 01 Oct 2018 00:00:00 -0700</lastBuildDate><item><title>Online training of LSTM RNN</title><link>/online-training-of-lstm-rnn.html</link><description>&lt;style type="text/css"&gt;/*!
+<rss version="2.0"><channel><title>Amol's blog</title><link>/</link><description>Artificial General Intelligence and Machine Consciousness Researcher</description><lastBuildDate>Mon, 01 Oct 2018 00:00:00 -0700</lastBuildDate><item><title>Pseudo online LSTM RNN</title><link>/pseudo-online-lstm-rnn.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1777,8 +1777,10 @@ _________________________________________________________________
 &lt;h2 id="Conclusions"&gt;Conclusions&lt;a class="anchor-link" href="#Conclusions"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;We generated some data, processed it sequentially one point as a time&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;OnlineToBatch&lt;/code&gt; crated batches of the data and successfully drove the model's training&lt;/li&gt;
-&lt;li&gt;Next, I will use &lt;code&gt;OnlineToBatch&lt;/code&gt; to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time&lt;/li&gt;
+&lt;li&gt;Test data produces reasonable predictions, so the network was successfully trained&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Next, I will use &lt;code&gt;OnlineToBatch&lt;/code&gt; to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time&lt;/p&gt;
+&lt;p&gt;When training using this simulated online mode, $n_{batch}$ could start of small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1814,4 +1816,4 @@ _________________________________________________________________
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Mon, 01 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:None,2018-10-01:/online-training-of-lstm-rnn.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Mon, 01 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:None,2018-10-01:/pseudo-online-lstm-rnn.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item></channel></rss>

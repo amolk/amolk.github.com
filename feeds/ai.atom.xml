@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Amol's blog - ai</title><link href="/" rel="alternate"></link><link href="/feeds/ai.atom.xml" rel="self"></link><id>/</id><updated>2018-10-01T00:00:00-07:00</updated><entry><title>Online training of LSTM RNN</title><link href="/online-training-of-lstm-rnn.html" rel="alternate"></link><published>2018-10-01T00:00:00-07:00</published><updated>2018-10-01T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:None,2018-10-01:/online-training-of-lstm-rnn.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Amol's blog - ai</title><link href="/" rel="alternate"></link><link href="/feeds/ai.atom.xml" rel="self"></link><id>/</id><updated>2018-10-01T00:00:00-07:00</updated><entry><title>Pseudo online LSTM RNN</title><link href="/pseudo-online-lstm-rnn.html" rel="alternate"></link><published>2018-10-01T00:00:00-07:00</published><updated>2018-10-01T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:None,2018-10-01:/pseudo-online-lstm-rnn.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -1782,8 +1782,10 @@ _________________________________________________________________
 &lt;h2 id="Conclusions"&gt;Conclusions&lt;a class="anchor-link" href="#Conclusions"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;We generated some data, processed it sequentially one point as a time&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;OnlineToBatch&lt;/code&gt; crated batches of the data and successfully drove the model's training&lt;/li&gt;
-&lt;li&gt;Next, I will use &lt;code&gt;OnlineToBatch&lt;/code&gt; to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time&lt;/li&gt;
+&lt;li&gt;Test data produces reasonable predictions, so the network was successfully trained&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Next, I will use &lt;code&gt;OnlineToBatch&lt;/code&gt; to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time&lt;/p&gt;
+&lt;p&gt;When training using this simulated online mode, $n_{batch}$ could start of small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

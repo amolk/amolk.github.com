@@ -38,10 +38,10 @@
 <meta name="keywords" content="keras, lstm, rnn, online learning">
 
 <meta property="og:site_name" content="Amol's blog"/>
-<meta property="og:title" content="Online training of LSTM RNN"/>
+<meta property="og:title" content="Pseudo online LSTM RNN"/>
 <meta property="og:description" content="I am building a new type of deep neural network based on predictive coding and free energy minimization. As one of the first steps, I need to set up an RNN building block that can be trained online by sending one training point $(X_t, y_t)$ at a time, but RNNs need each training sample to span several timesteps."/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="/online-training-of-lstm-rnn.html"/>
+<meta property="og:url" content="/pseudo-online-lstm-rnn.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-10-01 00:00:00-07:00"/>
 <meta property="article:modified_time" content=""/>
@@ -53,7 +53,7 @@
 <meta property="article:tag" content="online learning"/>
 <meta property="og:image" content="/images/profile.png">
 
-  <title>Amol's blog &ndash; Online training of LSTM RNN</title>
+  <title>Amol's blog &ndash; Pseudo online LSTM RNN</title>
 
 </head>
 <body>
@@ -78,7 +78,7 @@
 <article class="single">
   <header>
       
-    <h1 id="online-training-of-lstm-rnn">Online training of LSTM RNN</h1>
+    <h1 id="pseudo-online-lstm-rnn">Pseudo online LSTM RNN</h1>
     <p>
           Posted on Mon 01 October 2018 in <a href="/category/ai.html">ai</a>
 
@@ -1866,8 +1866,10 @@ _________________________________________________________________
 <h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
 <li>We generated some data, processed it sequentially one point as a time</li>
 <li><code>OnlineToBatch</code> crated batches of the data and successfully drove the model's training</li>
-<li>Next, I will use <code>OnlineToBatch</code> to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time</li>
+<li>Test data produces reasonable predictions, so the network was successfully trained</li>
 </ul>
+<p>Next, I will use <code>OnlineToBatch</code> to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time</p>
+<p>When training using this simulated online mode, $n_{batch}$ could start of small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.</p>
 
 </div>
 </div>
