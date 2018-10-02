@@ -4,7 +4,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I am building a new type of deep neural network based on predictive coding and free energy minimization. As one of the first steps, I need to set up an RNN building block that can be trained online by sending one training point $(X_t, y_t)$ at a time, but RNNs need each training sample to span several timesteps.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+&lt;p&gt;I am building a new type of deep neural network based on predictive coding and free energy minimization. As one of the first steps, I need to set up an RNN building block that can be trained online by sending one training point $(X_t, y_t)$ at a time. Given the time-unwrapped nature of RNNs, they need each training sample to span several timesteps.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -980,12 +980,13 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I am building a new type of deep neural network based on predictive coding and free energy minimization. As one of the first steps, I need to set up an RNN building block that can be trained online by sending one training point $(X_t, y_t)$ at a time, but RNNs need each training sample to span several timesteps.&lt;/p&gt;
+&lt;p&gt;I am building a new type of deep neural network based on predictive coding and free energy minimization. As one of the first steps, I need to set up an RNN building block that can be trained online by sending one training point $(X_t, y_t)$ at a time. Given the time-unwrapped nature of RNNs, they need each training sample to span several timesteps.&lt;/p&gt;
 &lt;p&gt;$(X_{sample}, y_{sample}) = (\{X_t\mid t\in[{t}_{min} \to {t}_{max}]\}, \{y_t\mid t\in[{t}_{min} \to {t}_{max}]\})$&lt;/p&gt;
 &lt;p&gt;Note: The $X_{sample}$ and $y_{sample}$ lengths need not be the same, but it is convenient for this case given we would receive a $(X_t, y_t)$ pair every time step.&lt;/p&gt;
-&lt;p&gt;Training in batches is a more optimal strategy, so we want samples to be collected in a batch.&lt;/p&gt;
+&lt;p&gt;Also, training in batches is a more optimal strategy, so we want samples to be collected in a batch.&lt;/p&gt;
 &lt;p&gt;$(X_{batch}, y_{batch}) = (\{X_{sample}^i\mid i\in[0 \to n_{batch}]\})$&lt;/p&gt;
 &lt;p&gt;To achieve this, we will use a sliding window of size $(t_{max} - t_{min})$ to make a sample and collect $n_{batch}$ such samples.&lt;/p&gt;
+&lt;p&gt;The result would be a way to feed data points one at a time while the RNN gets trained using accumulated batches of data.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -994,7 +995,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Generate-sample-time-series-data"&gt;Generate sample time series data&lt;a class="anchor-link" href="#Generate-sample-time-series-data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I started adopting time series data generation code from a &lt;a href="https://fairyonice.github.io/Stateful-LSTM-model-training-in-Keras.html"&gt;wonderful blog post&lt;/a&gt; by Yumi.&lt;/p&gt;
+&lt;h2 id="Generate-sample-time-series-data"&gt;Generate sample time series data&lt;a class="anchor-link" href="#Generate-sample-time-series-data"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;As seen above, each training sample contains a time series fragment $X_{sample}$ and another time series fragment $y_{sample}$. So we are looking at time series to time series prediction. Here I am adopting time series data generation code from a &lt;a href="https://fairyonice.github.io/Stateful-LSTM-model-training-in-Keras.html"&gt;wonderful blog post&lt;/a&gt; by Yumi.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1132,7 +1133,7 @@ tensorflow version 1.10.0
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now let's create a Python generator that spews out one data point at a time, internally calling random_sample() as needed.&lt;/p&gt;
+&lt;p&gt;Now we need a Python generator that spews out one data point at a time, internally calling random_sample() as needed. This would simulate a data stream.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1216,8 +1217,8 @@ tensorflow version 1.10.0
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Points-to-batch-generator"&gt;Points to batch generator&lt;a class="anchor-link" href="#Points-to-batch-generator"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now let's create a class that would convert data points to batches and call fit() on a given model once a batch is ready.&lt;/p&gt;
-&lt;p&gt;First a sliding window buffer -&lt;/p&gt;
+&lt;h2 id="Collect-batches-of-data-points"&gt;Collect batches of data points&lt;a class="anchor-link" href="#Collect-batches-of-data-points"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now let's create a class that would convert data points to batches and call &lt;code&gt;fit&lt;/code&gt; or &lt;code&gt;predict&lt;/code&gt; on a given model once a batch is ready.&lt;/p&gt;
+&lt;p&gt;First a sliding window buffer. Appending an item would push out an item from the left of the buffer, thus the buffer would always contain the last &lt;code&gt;item_count&lt;/code&gt; items.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1299,7 +1300,7 @@ tensorflow version 1.10.0
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Now the main logic -&lt;/p&gt;
+&lt;p&gt;Now the main logic. As a new point comes in, &lt;code&gt;OnlineToBatch&lt;/code&gt; will add it to buffers, producing a new sample. Such samples would be collected into a batch. Once a batch is full, &lt;code&gt;fit&lt;/code&gt; or &lt;code&gt;predict&lt;/code&gt; would be called on the model with the batch, and a new batch would start getting accumulated.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1449,7 +1450,7 @@ y =
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-LSTM-based-model"&gt;Create LSTM based model&lt;a class="anchor-link" href="#Create-LSTM-based-model"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To test if &lt;code&gt;OnlineToBatch&lt;/code&gt; can successfully drive the training of a model, we will create a LSTM based model.&lt;/p&gt;
+&lt;h2 id="Create-LSTM-based-model"&gt;Create LSTM based model&lt;a class="anchor-link" href="#Create-LSTM-based-model"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To test if &lt;code&gt;OnlineToBatch&lt;/code&gt; can successfully drive the training of an model, we will create a LSTM based model.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1782,7 +1783,7 @@ _________________________________________________________________
 &lt;h2 id="Conclusions"&gt;Conclusions&lt;a class="anchor-link" href="#Conclusions"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;We generated some data, processed it sequentially one point as a time&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;OnlineToBatch&lt;/code&gt; crated batches of the data and successfully drove the model's training&lt;/li&gt;
-&lt;li&gt;Test data produces reasonable predictions, so the network was successfully trained&lt;/li&gt;
+&lt;li&gt;We are not concerned about the accuracy of the model, but only need an indication that the network was trained. Test data produces reasonable predictions, indicating that the network was trained and &lt;code&gt;OnlineToBatch&lt;/code&gt; does not have glaring bugs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Next, I will use &lt;code&gt;OnlineToBatch&lt;/code&gt; to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time&lt;/p&gt;
 &lt;p&gt;When training using this simulated online mode, $n_{batch}$ could start of small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.&lt;/p&gt;
