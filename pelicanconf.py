@@ -4,27 +4,27 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Amol Kelkar'
 SITENAME = "Amol's blog"
-SITEURL = ''
+SITEURL = 'https://amolk.github.io'
 SITETITLE = 'Amol Kelkar'
 SITESUBTITLE = 'Artificial General Intelligence and Machine Consciousness Researcher'
 SITEDESCRIPTION = 'Amol\'s Journey towards AGI and Machine Consciousness'
-SITELOGO = None
+SITELOGO = 'images/profile.png'
 BROWSER_COLOR = '#333'
 ROBOTS = 'index, follow'
 
 PATH = 'content'
 THEME = 'themes/Flex'
+STATIC_PATHS = ['images']
 
 TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+AUTHOR_FEED_RSS = 'feeds/%s.rss.xml'
+RSS_FEED_SUMMARY_ONLY = False
 
 # Blogroll
 LINKS = ()
