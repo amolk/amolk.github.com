@@ -1871,13 +1871,9 @@ _________________________________________________________________
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
-<li>We generated some data, processed it sequentially one point as a time</li>
-<li><code>OnlineToBatch</code> crated batches of the data and successfully drove the model's training</li>
-<li>We are not concerned about the accuracy of the model, but only need an indication that the network was trained. Test data produces reasonable predictions, indicating that the network was trained and <code>OnlineToBatch</code> does not have glaring bugs.</li>
-</ul>
-<p>Next, I will use <code>OnlineToBatch</code> to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time.</p>
-<p>When training using this simulated online mode, $n_{batch}$ could start off small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.</p>
+<h2 id="Next-steps">Next steps<a class="anchor-link" href="#Next-steps">&#182;</a></h2><p>In this exercise, we generated some data, processed it sequentially one point as a time. <code>OnlineToBatch</code> crated batches of the data and trained the model. As seen above, test data produces reasonable predictions, which is a good enough sanity check for now.</p>
+<p>Next, I will create <code>OnlineLSTM</code> subclass of LSTM layer that will wrap <code>OnlineToBatch</code> logic. This new layer type will be used as a building block in a larger predictive coding network.</p>
+<p>Note: When training with this simulated online LSTM, $n_{batch}$ could start off small and grow asymptotically over time. This might allow a network to learn quickly during early volatile phase and to become stable later. Something to look into later.</p>
 
 </div>
 </div>

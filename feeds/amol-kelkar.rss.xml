@@ -1775,13 +1775,9 @@ _________________________________________________________________
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Conclusions"&gt;Conclusions&lt;a class="anchor-link" href="#Conclusions"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;We generated some data, processed it sequentially one point as a time&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;OnlineToBatch&lt;/code&gt; crated batches of the data and successfully drove the model's training&lt;/li&gt;
-&lt;li&gt;We are not concerned about the accuracy of the model, but only need an indication that the network was trained. Test data produces reasonable predictions, indicating that the network was trained and &lt;code&gt;OnlineToBatch&lt;/code&gt; does not have glaring bugs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, I will use &lt;code&gt;OnlineToBatch&lt;/code&gt; to create a wrapper on LSTM layer called OnlineLSTM that can be trained one data point at a time.&lt;/p&gt;
-&lt;p&gt;When training using this simulated online mode, $n_{batch}$ could start off small and could be made larger asymptotically over time. This would allow a network to learn quickly during early volatile phase and become stable later.&lt;/p&gt;
+&lt;h2 id="Next-steps"&gt;Next steps&lt;a class="anchor-link" href="#Next-steps"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this exercise, we generated some data, processed it sequentially one point as a time. &lt;code&gt;OnlineToBatch&lt;/code&gt; crated batches of the data and trained the model. As seen above, test data produces reasonable predictions, which is a good enough sanity check for now.&lt;/p&gt;
+&lt;p&gt;Next, I will create &lt;code&gt;OnlineLSTM&lt;/code&gt; subclass of LSTM layer that will wrap &lt;code&gt;OnlineToBatch&lt;/code&gt; logic. This new layer type will be used as a building block in a larger predictive coding network.&lt;/p&gt;
+&lt;p&gt;Note: When training with this simulated online LSTM, $n_{batch}$ could start off small and grow asymptotically over time. This might allow a network to learn quickly during early volatile phase and to become stable later. Something to look into later.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
