@@ -1872,8 +1872,8 @@ _________________________________________________________________
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Next-steps">Next steps<a class="anchor-link" href="#Next-steps">&#182;</a></h2><p>In this exercise, we generated some data, processed it sequentially one point as a time. <code>OnlineToBatch</code> crated batches of the data and trained the model. As seen above, test data produces reasonable predictions, which is a good enough sanity check for now.</p>
-<p>Next, I will create <code>OnlineLSTM</code> subclass of LSTM layer that will wrap <code>OnlineToBatch</code> logic. This new layer type will be used as a building block in a larger predictive coding network.</p>
-<p>Note: When training with this simulated online LSTM, $n_{batch}$ could start off small and grow asymptotically over time. This might allow a network to learn quickly during early volatile phase and to become stable later. Something to look into later.</p>
+<p>Next, we will create <code>PseudoOnlineModel</code> subclass of LSTM model that will wrap <code>OnlineToBatch</code> logic. This new model type will be used as a building block in a larger predictive coding network.</p>
+<p>Note: When training, $n_{batch}$ could start off small and grow asymptotically over time. This might allow a network to learn quickly during early volatile phase and to become stable later. Something to look into later.</p>
 
 </div>
 </div>
