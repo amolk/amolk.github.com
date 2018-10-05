@@ -20,6 +20,7 @@ EXTRA_PATH_METADATA = {
     'css/custom.css': {'path': 'css/custom.css'},
 }
 CUSTOM_CSS = 'css/custom.css'
+MAIN_MENU = True
 
 TIMEZONE = 'America/Los_Angeles'
 
