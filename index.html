@@ -71,9 +71,35 @@
   </aside>
   <main>
 
+    <nav>
+      <a href="">    Home
+</a>
+
+
+      <a href="/feeds/all.atom.xml">    Atom
+</a>
+
+      <a href="/feeds/all.rss.xml">    RSS
+</a>
+    </nav>
 
 
 
+<article>
+  <header>
+    <h2><a href="/pseudo-online-lstm-rnn-revisited.html#pseudo-online-lstm-rnn-revisited">Pseudo online LSTM RNN - revisited</a></h2>
+    <p>
+          Posted on Thu 04 October 2018 in <a href="/category/ai.html">ai</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/keras.html">keras</a>,              <a href="/tag/lstm.html">lstm</a>,              <a href="/tag/rnn.html">rnn</a>,              <a href="/tag/online-learning.html">online learning</a>
+    </p>
+  </header>
+  </div>
+  <hr />
+</article>
 <article>
   <header>
     <h2><a href="/pseudo-online-lstm-rnn-part-2.html#pseudo-online-lstm-rnn-part-2">Pseudo online LSTM RNN - part 2</a></h2>
@@ -86,17 +112,6 @@
               <a href="/tag/keras.html">keras</a>,              <a href="/tag/lstm.html">lstm</a>,              <a href="/tag/rnn.html">rnn</a>,              <a href="/tag/online-learning.html">online learning</a>
     </p>
   </header>
-  <div>
-      
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the <a href="./pseudo-online-lstm-rnn.html">previous post</a>, we built a way to convert a stream of data points $(X_t, y_t)$ into sample batches $(X_{batch}, y_{batch})$ suitable to train an RNN. In this post, let's use that code to build an <code>PseudoOnlineModel</code> Keras model class.</p>
-<h2 id="Relevant-code-from-previous-post">Relevant code from previous post<a class="anchor-link" href="#Relevant-code-from-previous-post">&#182;</a></h2><p>I have modified <code>OnlineToBatch</code> to simply return the batched data instead of calling an action</p>
-      <br>
-      <a class="btn" href="/pseudo-online-lstm-rnn-part-2.html#pseudo-online-lstm-rnn-part-2">    Continue reading
-</a>
   </div>
   <hr />
 </article>
@@ -112,16 +127,6 @@
               <a href="/tag/keras.html">keras</a>,              <a href="/tag/lstm.html">lstm</a>,              <a href="/tag/rnn.html">rnn</a>,              <a href="/tag/online-learning.html">online learning</a>
     </p>
   </header>
-  <div>
-      
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>I am building a new type of deep neural network based on predictive coding and free energy minimization. As one of the first steps, I need to set up an RNN building block that can be trained online by sending one training point $(X_t, y_t)$ at a time. Given the time-unwrapped nature of RNNs, they need each training sample to span several timesteps.</p>
-      <br>
-      <a class="btn" href="/pseudo-online-lstm-rnn.html#pseudo-online-lstm-rnn">    Continue reading
-</a>
   </div>
 </article>
 
