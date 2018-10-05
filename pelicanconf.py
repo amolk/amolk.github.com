@@ -8,13 +8,18 @@ SITEURL = 'https://amolk.github.io'
 SITETITLE = 'Amol Kelkar'
 SITESUBTITLE = 'Artificial General Intelligence and Machine Consciousness Researcher'
 SITEDESCRIPTION = 'Amol\'s Journey towards AGI and Machine Consciousness'
-SITELOGO = 'images/profile.png'
+SITELOGO = '/images/profile.png'
 BROWSER_COLOR = '#333'
 ROBOTS = 'index, follow'
 
 PATH = 'content'
 THEME = 'themes/Flex'
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'css']
+IGNORE_FILES = ['.ipynb_checkpoints']
+EXTRA_PATH_METADATA = {
+    'css/custom.css': {'path': 'css/custom.css'},
+}
+CUSTOM_CSS = 'css/custom.css'
 
 TIMEZONE = 'America/Los_Angeles'
 
@@ -27,16 +32,16 @@ AUTHOR_FEED_RSS = 'feeds/%s.rss.xml'
 RSS_FEED_SUMMARY_ONLY = False
 
 # Blogroll
-LINKS = ()
+LINKS = (('LinkedIn', 'https://www.linkedin.com/in/amol-kelkar/'),)
 
 # Social widget
-SOCIAL = ()
+SOCIAL = (('LinkedIn', 'https://www.linkedin.com/in/amol-kelkar/'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
-MARKUP = ('md', 'ipynb')
+RELATIVE_URLS = True
+MARKUP = ('md', 'ipynb', 'render_math')
 
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
