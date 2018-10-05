@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Amol's blog</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2018-10-04T00:00:00-07:00</updated><entry><title>Pseudo online LSTM RNN - revisited</title><link href="/pseudo-online-lstm-rnn-revisited.html" rel="alternate"></link><published>2018-10-04T00:00:00-07:00</published><updated>2018-10-04T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:None,2018-10-04:/pseudo-online-lstm-rnn-revisited.html</id><summary type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Amol's blog</title><link href="https://amolk.github.io/" rel="alternate"></link><link href="https://amolk.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://amolk.github.io/</id><updated>2018-10-04T00:00:00-07:00</updated><entry><title>Pseudo online LSTM RNN - revisited</title><link href="https://amolk.github.io/pseudo-online-lstm-rnn-revisited.html" rel="alternate"></link><published>2018-10-04T00:00:00-07:00</published><updated>2018-10-04T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:amolk.github.io,2018-10-04:/pseudo-online-lstm-rnn-revisited.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -1377,7 +1377,7 @@ _________________________________________________________________
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="keras"></category><category term="lstm"></category><category term="rnn"></category><category term="online learning"></category></entry><entry><title>Pseudo online LSTM RNN - part 2</title><link href="/pseudo-online-lstm-rnn-part-2.html" rel="alternate"></link><published>2018-10-03T00:00:00-07:00</published><updated>2018-10-03T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:None,2018-10-03:/pseudo-online-lstm-rnn-part-2.html</id><summary type="html">
+</content><category term="keras"></category><category term="lstm"></category><category term="rnn"></category><category term="online learning"></category></entry><entry><title>Pseudo online LSTM RNN - part 2</title><link href="https://amolk.github.io/pseudo-online-lstm-rnn-part-2.html" rel="alternate"></link><published>2018-10-03T00:00:00-07:00</published><updated>2018-10-03T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:amolk.github.io,2018-10-03:/pseudo-online-lstm-rnn-part-2.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -3032,7 +3032,7 @@ tensorflow version 1.10.0
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="keras"></category><category term="lstm"></category><category term="rnn"></category><category term="online learning"></category></entry><entry><title>Pseudo online LSTM RNN</title><link href="/pseudo-online-lstm-rnn.html" rel="alternate"></link><published>2018-10-01T00:00:00-07:00</published><updated>2018-10-01T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:None,2018-10-01:/pseudo-online-lstm-rnn.html</id><summary type="html">
+</content><category term="keras"></category><category term="lstm"></category><category term="rnn"></category><category term="online learning"></category></entry><entry><title>Pseudo online LSTM RNN</title><link href="https://amolk.github.io/pseudo-online-lstm-rnn.html" rel="alternate"></link><published>2018-10-01T00:00:00-07:00</published><updated>2018-10-01T00:00:00-07:00</updated><author><name>Amol Kelkar</name></author><id>tag:amolk.github.io,2018-10-01:/pseudo-online-lstm-rnn.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Amol's blog</title><link>/</link><description>Artificial General Intelligence and Machine Consciousness Researcher</description><lastBuildDate>Thu, 04 Oct 2018 00:00:00 -0700</lastBuildDate><item><title>Pseudo online LSTM RNN - revisited</title><link>/pseudo-online-lstm-rnn-revisited.html</link><description>&lt;style type="text/css"&gt;/*!
+<rss version="2.0"><channel><title>Amol's blog</title><link>https://amolk.github.io/</link><description>Artificial General Intelligence and Machine Consciousness Researcher</description><lastBuildDate>Thu, 04 Oct 2018 00:00:00 -0700</lastBuildDate><item><title>Pseudo online LSTM RNN - revisited</title><link>https://amolk.github.io/pseudo-online-lstm-rnn-revisited.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1365,7 +1365,7 @@ _________________________________________________________________
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Thu, 04 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:None,2018-10-04:/pseudo-online-lstm-rnn-revisited.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item><item><title>Pseudo online LSTM RNN - part 2</title><link>/pseudo-online-lstm-rnn-part-2.html</link><description>&lt;style type="text/css"&gt;/*!
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Thu, 04 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:amolk.github.io,2018-10-04:/pseudo-online-lstm-rnn-revisited.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item><item><title>Pseudo online LSTM RNN - part 2</title><link>https://amolk.github.io/pseudo-online-lstm-rnn-part-2.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -3006,7 +3006,7 @@ tensorflow version 1.10.0
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Wed, 03 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:None,2018-10-03:/pseudo-online-lstm-rnn-part-2.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item><item><title>Pseudo online LSTM RNN</title><link>/pseudo-online-lstm-rnn.html</link><description>&lt;style type="text/css"&gt;/*!
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Wed, 03 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:amolk.github.io,2018-10-03:/pseudo-online-lstm-rnn-part-2.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item><item><title>Pseudo online LSTM RNN</title><link>https://amolk.github.io/pseudo-online-lstm-rnn.html</link><description>&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -4865,4 +4865,4 @@ _________________________________________________________________
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Mon, 01 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:None,2018-10-01:/pseudo-online-lstm-rnn.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Amol Kelkar</dc:creator><pubDate>Mon, 01 Oct 2018 00:00:00 -0700</pubDate><guid isPermaLink="false">tag:amolk.github.io,2018-10-01:/pseudo-online-lstm-rnn.html</guid><category>keras</category><category>lstm</category><category>rnn</category><category>online learning</category></item></channel></rss>
